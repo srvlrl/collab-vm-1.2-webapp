@@ -123,7 +123,11 @@ const enusLanguage: Language = {
 		kIaosMediaEjected: '{0} ejected the {1}.',
 		kIaosChangeMediaHeader: 'Change Media',
 		kIaosInsert: 'Load..',
-		kIaosEject: 'Eject'
+		kIaosEject: 'Eject',
+		kIaosTableHeader_Build: 'Build',
+		kIaosTableHeader_Architecture: 'Arch',
+		kIaosTableHeader_Year: 'Year',
+		kIaosTable_Filter: 'Filter'
 	}
 };
 

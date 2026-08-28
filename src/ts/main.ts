@@ -17,21 +17,11 @@ import dayjs from 'dayjs';
 import dompurify from 'dompurify';
 import { IaosManager } from './iaos/iaos.js';
 import { VoteType } from '../../collab-vm-1.2-binary-protocol/src/votex.js';
+import fa from './fontawesome.js';
 const _eval = window.eval;
 
 // Elements
 const w = window as any;
-
-const fa = w.FontAwesome as {
-	icon(c: { prefix: string; iconName: string }): {
-		html: Array<string>;
-		icon: Array<any>;
-		iconName: string;
-		node: HTMLCollection;
-		prefix: string;
-		type: string;
-	};
-};
 
 const elements = {
 	vmlist: document.getElementById('vmlist') as HTMLDivElement,
@@ -1793,13 +1783,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 	let welcomeModalVersion = window.localStorage.getItem(Config.WelcomeModalLocalStorageKey);
 	if (welcomeModalVersion !== Config.WelcomeModalVersion) {
 		let welcomeModalDismissBtn = document.getElementById('welcomeModalDismiss') as HTMLButtonElement;
-		welcomeModalDismissBtn.addEventListener('click', () => {
-			window.localStorage.setItem(Config.WelcomeModalLocalStorageKey, Config.WelcomeModalVersion);
-		});
+		welcomeModalDismissBtn.addEventListener(
+			'click',
+			() => {
+				window.localStorage.setItem(Config.WelcomeModalLocalStorageKey, Config.WelcomeModalVersion);
+			},
+			{ once: true }
+		);
 		welcomeModalDismissBtn.disabled = true;
 		welcomeModal.show();
 		setTimeout(() => {
 			welcomeModalDismissBtn.disabled = false;
 		}, 5000);
 	}
+
+	elements.rulesBtn.addEventListener('click', () => welcomeModal.show());
 });
