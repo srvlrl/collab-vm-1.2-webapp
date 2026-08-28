@@ -121,6 +121,10 @@
 		"kIaosMediaEjected": "{0} vysunul {1}.",
 		"kIaosChangeMediaHeader": "Změnit médium",
 		"kIaosInsert": "Načíst..",
-		"kIaosEject": "Vysunout"
+		"kIaosEject": "Vysunout",
+		"kIaosTableHeader_Build": "Sestavení",
+		"kIaosTableHeader_Architecture": "Architektura",
+		"kIaosTableHeader_Year": "Rok",
+		"kIaosTable_Filter": "Filtr"
 	}
 }
